@@ -1,0 +1,44 @@
+p{
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+}
+table{
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: 1px solid black;
+  transform: translate(0%, 0%);
+  background-color: #f1f5f9;
+}
+.page {
+  color: white;
+  padding: 0 1rem;
+  background: #f1f5f9;
+  &__box {
+    min-height: 120px;
+    background: #FF9933;
+    margin: 0 -1rem;
+    font-size: 36px;
+  }
+  &__content {
+    min-height: calc(100vh - 178px);
+    border-radius: 50px;
+    margin-top: -2rem;
+    background: linear-gradient(-135deg, #0bd7f1, #f839f8);
+    color: black;
+    font-size: 20px;
+    &-data {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.card{
+    border-radius: 1rem;
+    max-width: 600px;
+    margin-bottom: 1rem;
+  }

@@ -1,0 +1,22 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <!-- <img src="./assets/logo.svg" alt="Company Logo" /> -->
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2"><A>Menu | เมนู</A></h2>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="./" routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: true }">
+    <mat-icon>home</mat-icon>Home
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="./teachernamestudent">
+    <mat-icon>group_add</mat-icon>เพิ่มนักเรียน
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="./teacherschedule">
+    <mat-icon>add_circle_outline</mat-icon>รายชื่อนักศึกษา
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="./teachertimetable">
+    <mat-icon>add_circle_outline</mat-icon>ตารางสอน
+  </a>
+
+</mat-nav-list>
