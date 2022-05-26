@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router) {}
+  constructor(private dataService: ApiService,private router: Router) {}
+
+  username: string = this.dataService.getToken();
 
   ngOnInit(): void {}
 
@@ -18,6 +21,7 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+    this.dataService.deleteToken();
     this.router.navigate(['./login'])
   }
 }

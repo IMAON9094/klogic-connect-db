@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-loginteacher',
@@ -8,13 +11,34 @@ import { Router } from '@angular/router';
 })
 export class LoginteacherComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  userForm: FormGroup;
+  constructor(private fb: FormBuilder,private dataService: ApiService,private router:Router) {
+    this.userForm = this.fb.group({
+      teacherID: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  Submit(){
+  postdata(userForm1:any){
+    this.dataService.teacherlogin(userForm1.value.teacherID,userForm1.value.password).pipe(first()).subscribe(
+    data => {
+      //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
+      //this.router.navigate([redirect]);
+      this.router.navigate(['teacher']);
+    },
+    error => {
+      console.log(userForm1.value);
+      alert("User name or password is incorrect")
+    });
+    }
+    get teacherID() { return this.userForm.get('teacherID'); }
+    get password() { return this.userForm.get('password'); }
+
+  /*Submit(){
     this.router.navigate(['teacher']);
-  }
+  }*/
 
 }

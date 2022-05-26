@@ -8,13 +8,13 @@
   <body>
     <div class="wrapper">
       <div class="title">Login</div>
-      <form>
+      <form [formGroup]="userForm" (ngSubmit)="postdata(userForm)" autocomplete="off" >
         <div class="field">
-          <input type="text" required>
+          <input type="text" name="stdID" formControlName="stdID" autocomplete="off">
           <label>StudentID</label>
         </div>
         <div class="field">
-          <input type="password" required>
+          <input type="password" name="personalID" formControlName="personalID" autocomplete="off">
           <label>Password</label>
         </div>
         <div class="content">
@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="field">
-          <input type="submit" value="Login" (click)="Submit()">
+          <input type="submit" value="Login">
         </div>
         <div class="signup-link">Go to teacher page <a routerLink="/loginteacher" routerLinkActive="active">Login</a></div>
       </form>

@@ -42,6 +42,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { LoginteacherComponent } from './login/loginteacher/loginteacher.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -91,6 +94,9 @@ import { LoginteacherComponent } from './login/loginteacher/loginteacher.compone
     MatSelectModule,
     MatCardModule,
     MatTableModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
