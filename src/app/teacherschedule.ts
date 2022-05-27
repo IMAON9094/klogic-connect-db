@@ -1,7 +1,7 @@
 export class Teacherschedule {
   public stdID: string;
   public name: string;
-  public section:number;
+  public section: number;
 
   constructor(stdID:string,name: string,section:number) {
     this.stdID = stdID;

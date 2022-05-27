@@ -4,86 +4,81 @@
     <div class="page__content-data position-absolute text-center">
       <div class="example-container">
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+        <form [formGroup]="regisForm" (ngSubmit)="postdata(regisForm)" autocomplete="off" >
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID1" formControlName="courseID1" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section1">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID2" formControlName="courseID2" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section2">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID3" formControlName="courseID3" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section3">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID4" formControlName="courseID4" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section4">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID5" formControlName="courseID5" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section5">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-        <mat-form-field class="container" hintLabel="Max 5 characters" appearance="fill">
-          <mat-label>รหัสวิชา</mat-label>
-          <input matInput #input maxlength="5" placeholder="Ex.10101">
-          <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
-        </mat-form-field>
-        <mat-form-field appearance="fill" class="select">
-          <mat-label>ตอนเรียน</mat-label>
-          <mat-select>
-            <mat-option value="option">Sec.1</mat-option>
-            <mat-option value="option">Sec.2</mat-option>
-          </mat-select>
-        </mat-form-field><br>
+          <mat-form-field class="container" hintLabel="Max 9 characters" appearance="fill">
+            <mat-label>รหัสวิชา</mat-label>
+            <input matInput #input maxlength="9" placeholder="Ex.040203102" name="courseID6" formControlName="courseID6" autocomplete="off">
+            <mat-hint align="end">{{input.value?.length || 0}}/9</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="select">
+            <mat-label>ตอนเรียน</mat-label>
+            <mat-select name="section1" formControlName="section6">
+              <mat-option *ngFor="let option of actions" [value]="option">Sec.{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
 
-
-        <button>Send</button>
+          <button type="submit">Send</button>
+        </form>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Users } from './user';
 import { Teachers } from './teacher';
 import { Result } from './result';
+import { Register } from './register';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,12 @@ export class ApiService {
     return Users;
     }));
   }*/
+
+  public registration(stdID: any,course_code: any,section: any) {
+    return this.httpClient.post<any>(this.baseUrl + '/register.php', { stdID, course_code, section }).pipe(map(Register => {
+      return Register;
+    }));
+  }
 
   //token
   setToken(token: string) {
