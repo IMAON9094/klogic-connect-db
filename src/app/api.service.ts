@@ -5,6 +5,7 @@ import { Users } from './user';
 import { Teachers } from './teacher';
 import { Result } from './result';
 import { Register } from './register';
+import { Student } from './student';
 
 @Injectable({
   providedIn: 'root'
@@ -19,31 +20,26 @@ export class ApiService {
   @Output() getLoggedInName: EventEmitter<any> = new EventEmitter();
   constructor(private httpClient : HttpClient) { }
   public userlogin(username: any, password: any) {
-    //alert(username)
     return this.httpClient.post<any>(this.baseUrl + '/login.php', { username, password }).pipe(map(Users => {
       this.setToken(Users[0].stdID);
       this.getLoggedInName.emit(true);
       console.log(Users);
-      //console.log("users[0].name",Users[0].name);
       console.log(this.getToken());
       return Users;
     }));
   }
 
   public teacherlogin(username: any, password: any) {
-    //alert(username)
     return this.httpClient.post<any>(this.baseUrl + '/loginteacher.php', { username, password }).pipe(map(Teachers => {
       this.setToken(Teachers[0].teacherID);
       this.getLoggedInName.emit(true);
       console.log(Teachers);
-      //console.log("users[0].name",Users[0].name);
       console.log(this.getToken());
       return Teachers;
     }));
   }
 
   public result(option: any, userID: any) {
-    //alert(option+" "+userID);
     return this.httpClient.post<any>(this.baseUrl + '/result.php', { option, userID }).pipe(map(Result => {
       console.log(Result);
       this.dataresult=Result;
@@ -51,10 +47,8 @@ export class ApiService {
     }));
   }
 
-  //teacherschedule
 
   public teacherschedule(option: any, userID: any) {
-    //alert(option+" "+userID);
     return this.httpClient.post<any>(this.baseUrl + '/teacherschedule.php', { option, userID }).pipe(map(Teacherschedule => {
       console.log(Teacherschedule);
       this.dataschedule=Teacherschedule;
@@ -62,15 +56,21 @@ export class ApiService {
     }));
   }
 
-  /*public userregistration(name: any,email: any,pwd: any) {
-    return this.httpClient.post<any>(this.baseUrl + '/register.php', { name,email, pwd }).pipe(map(Users => {
-    return Users;
-    }));
-  }*/
-
   public registration(stdID: any,course_code: any,section: any) {
     return this.httpClient.post<any>(this.baseUrl + '/register.php', { stdID, course_code, section }).pipe(map(Register => {
       return Register;
+    }));
+  }
+
+  public adduser(personalID: any,stdID: any,new_password: any) {
+    return this.httpClient.post<any>(this.baseUrl + '/teacheradduser.php', { personalID,stdID, new_password }).pipe(map(Users => {
+      return Users;
+    }));
+  }
+
+  public addstudent(stdID: any,name: any,sex: any,birthday: any,personalID: any) {
+    return this.httpClient.post<any>(this.baseUrl + '/teacheraddstudent.php', { stdID, name, sex, birthday, personalID }).pipe(map(Student => {
+      return Student;
     }));
   }
 

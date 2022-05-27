@@ -9,11 +9,9 @@ const teacherroutes: Routes = [
   {
     path: '',
     component: TeacherComponent,
-    //canActivate: [AuthGuard],
     children: [
       {
         path: '',
-        //canActivateChild: [AuthGuard],
         children: [
           { path: '', component: TeacherhomeComponent},
           { path: 'teachernamestudent', component: TeachernamestudentComponent},

@@ -7,7 +7,6 @@
         <mat-label>ตอนเรียน</mat-label>
         <mat-select disableRipple (selectionChange)="changesec()" [(ngModel)]="option">
           <mat-option *ngFor="let option of actions" [value]="option">ตอนเรียนที่ {{option}}</mat-option>
-          <!--<mat-option value="2">ตอนเรียนที่ 2</mat-option>-->
         </mat-select>
       </mat-form-field>
     </div>
@@ -27,19 +26,7 @@
             <td>{{list.name}}</td>
             <td>{{list.section}}</td>
           </tr>
-          <!--<tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td scope="2">Larry</td>
-            <td>@twitter</td>
-          </tr>-->
         </tbody>
       </table>
-
   </div>
 </div>

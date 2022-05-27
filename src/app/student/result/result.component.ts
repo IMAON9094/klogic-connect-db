@@ -27,13 +27,8 @@ export class ResultComponent implements OnInit {
     console.log(this.option);
     this.dataService.result(this.option,this.userID).pipe(first()).subscribe(
       data => {
-        //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-        //this.router.navigate([redirect]);
-        //this.router.navigate(['student']);
-        //this.data_result=
         console.log("result.ts file");
         this.rs=this.dataService.getResult();
-        //console.log(this.dataService.getResult());
         console.log(this.rs);
 
       },
@@ -41,8 +36,7 @@ export class ResultComponent implements OnInit {
         alert("SOS");
       });
       }
-      //get stdID() { return this.userForm.get('stdID'); }
-      //get personalID() { return this.userForm.get('personalID'); }
+
 }
 
 

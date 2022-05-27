@@ -51,7 +51,7 @@ button:active {
   background: #f1f5f9;
   &__box {
     min-height: 120px;
-    background: #FF9933;
+    background: linear-gradient(-135deg, #004d96, #9cbbf7);
     margin: 0 -1rem;
     font-size: 36px;
   }

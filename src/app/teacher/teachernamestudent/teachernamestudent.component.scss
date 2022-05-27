@@ -5,7 +5,7 @@
   background: #ffffff;
   &__box {
     min-height: 120px;
-    background: #FF9933;
+    background: linear-gradient(-135deg, #004d96, #9cbbf7);
     margin: 0 -1rem;
     font-size: 36px;
   }
@@ -122,18 +122,18 @@
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
-    transform: translate(610%, 0%);
+    transform: translate(10%, 0%);
   }
 
   button:hover {
     background-color: #23c483;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
-    transform: translate(610%, 0%);
+    transform: translate(10%, 0%);
   }
 
   button:active {
-    transform: translate(610%, 0%);
+    transform: translate(10%, 0%);
   }
   .buttonstupid{
     margin-top: 0.5em;

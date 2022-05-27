@@ -101,25 +101,4 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  /*postdata(userForm1:any){
-
-    this.dataService.userlogin(userForm1.value.stdID,userForm1.value.personalID).pipe(first()).subscribe(
-    data => {
-      //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-      //this.router.navigate([redirect]);
-      this.router.navigate(['student']);
-    },
-    error => {
-      console.log(userForm1.value);
-      alert("User name or password is incorrect")
-    });
-    }
-    //get stdID() { return this.userForm.get('stdID'); }
-    //get personalID() { return this.userForm.get('personalID'); }
-
-  Submit(){
-    this.router.navigate(['student']);
-  }*/
-
-
 }

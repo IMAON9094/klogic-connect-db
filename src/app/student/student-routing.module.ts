@@ -14,11 +14,9 @@ const stdroutes: Routes = [
   {
     path: '',
     component: StudentComponent,
-    //canActivate: [AuthGuard],
     children: [
       {
         path: '',
-        //canActivateChild: [AuthGuard],
         children: [
           { path: '', component: HomeComponent },
           { path: 'register', component: RegisterComponent },

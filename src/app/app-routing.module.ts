@@ -16,18 +16,7 @@ import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  /*{ path: 'home', component: HomeComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'add', component: AddComponent },
-  { path: 'cancle', component: CancleComponent },
-  { path: 'change', component: ChangeComponent },
-  { path: 'result', component: ResultComponent },
-  { path: 'grade', component: GradeComponent },
-  { path: 'password', component: PasswordComponent},*/
   { path: 'login', component: LoginComponent},
-  /*{ path: 'teacherhome', component: TeacherhomeComponent},
-  { path: 'teachernamestudent', component: TeachernamestudentComponent},
-  { path: 'teacherschedule', component: TeacherscheduleComponent},*/
   { path: 'loginteacher', component: LoginteacherComponent},
   { path: 'student',
     loadChildren: () => import('./student/student.module').then(m => m.StudentModule),

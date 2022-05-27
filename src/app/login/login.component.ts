@@ -24,8 +24,6 @@ export class LoginComponent implements OnInit {
   postdata(userForm1:any){
     this.dataService.userlogin(userForm1.value.stdID,userForm1.value.personalID).pipe(first()).subscribe(
     data => {
-      //const redirect = this.dataService.redirectUrl ? this.dataService.redirectUrl : '/dashboard';
-      //this.router.navigate([redirect]);
       this.router.navigate(['student']);
     },
     error => {
@@ -35,9 +33,5 @@ export class LoginComponent implements OnInit {
     }
     get stdID() { return this.userForm.get('stdID'); }
     get personalID() { return this.userForm.get('personalID'); }
-
-  /*Submit(){
-    this.router.navigate(['student']);
-  }*/
 
 }
