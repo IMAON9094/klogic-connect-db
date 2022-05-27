@@ -5,9 +5,9 @@
     <div class="select">
       <mat-form-field class="ss" appearance="fill">
         <mat-label>ปีการศึกษา</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">เทอม 1</mat-option>
-          <mat-option value="2">เทอม 2</mat-option>
+        <mat-select disableRipple (selectionChange)="changesec()" [(ngModel)]="option">
+          <mat-option *ngFor="let option of actions" [value]="option">เทอม {{option}}</mat-option>
+          <!--<mat-option value="2">เทอม 2</mat-option>-->
         </mat-select>
       </mat-form-field>
     </div>
@@ -21,22 +21,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td scope="2">Larry</td>
-            <td>@twitter</td>
+          <tr *ngFor="let list of rs">
+            <th scope="row">{{list.course_code}}</th>
+            <td>{{list.subject}}</td>
+            <td>{{list.credit}}</td>
+            <td>{{list.section}}</td>
           </tr>
         </tbody>
       </table>

@@ -4,8 +4,8 @@ export class Users {
   public new_password:string;
 
   constructor(personalId:string,stdId: string,new_pwd:string) {
-  this.personalID = personalId;
-  this.stdID = stdId;
-  this.new_password = new_pwd;
+    this.personalID = personalId;
+    this.stdID = stdId;
+    this.new_password = new_pwd;
   }
 }

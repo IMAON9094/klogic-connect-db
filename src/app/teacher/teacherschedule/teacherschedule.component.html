@@ -5,29 +5,29 @@
     <div class="select">
       <mat-form-field class="ss" appearance="fill">
         <mat-label>ตอนเรียน</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">ตอนเรียนที่ 1</mat-option>
-          <mat-option value="2">ตอนเรียนที่ 2</mat-option>
+        <mat-select disableRipple (selectionChange)="changesec()" [(ngModel)]="option">
+          <mat-option *ngFor="let option of actions" [value]="option">ตอนเรียนที่ {{option}}</mat-option>
+          <!--<mat-option value="2">ตอนเรียนที่ 2</mat-option>-->
         </mat-select>
       </mat-form-field>
     </div>
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">รหัสวิชา</th>
-            <th scope="col">รายวิชา</th>
-            <th scope="col">หน่วยกิต</th>
+            <th scope="col">ลำดับ</th>
+            <th scope="col">รหัสนักศึกษา</th>
+            <th scope="col">ชื่อนักศึกษา</th>
             <th scope="col">ตอนเรียน</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr *ngFor="let list of rs; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{list.stdID}}</td>
+            <td>{{list.name}}</td>
+            <td>{{list.section}}</td>
           </tr>
-          <tr>
+          <!--<tr>
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
@@ -37,7 +37,7 @@
             <th scope="row">3</th>
             <td scope="2">Larry</td>
             <td>@twitter</td>
-          </tr>
+          </tr>-->
         </tbody>
       </table>
 
